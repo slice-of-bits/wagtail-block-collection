@@ -15,7 +15,5 @@ steps:
     password:
       from_secret: pypi_password
   when:
-    branch:
-      - master
     event:
       - tag
