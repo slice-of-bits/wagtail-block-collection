@@ -1,0 +1,9 @@
+{% block head %}
+    {% if self.google_font %} <link href="https://fonts.googleapis.com/css2?family={{ self.google_font }}&display=swap" rel="stylesheet">{% endif %}
+{% endblock %}
+<a role="button"
+   class="btn {{ self.size }}"
+   style="background-color: {{ self.bg_color }};
+           color: {{ self.text_color }};
+           {% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %}"
+   href="{{ self.page.url }}{{ self.url }}">{{ self.text }}</a>

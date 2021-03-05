@@ -1,0 +1,3 @@
+wagtail>=2.11.1
+wagtailfontawesome>=1.1.4
+wagtail-color-panel>=1.2.0

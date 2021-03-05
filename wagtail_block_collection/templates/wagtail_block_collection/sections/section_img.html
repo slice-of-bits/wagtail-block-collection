@@ -1,0 +1,20 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% image self.bg_img width-1200 as tmp_photo %}
+
+<section class="{{ self.bottom_effect }}" style="background-image: url({{ tmp_photo.url }});
+        position: relative;
+        z-index: calc(100 - {{ block_count }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center !important;
+        color: {{ self.text_color }};
+        padding: 6rem 0;">
+    <div class="{% if self.full_width %}container-fluid{% else %}container{% endif %}">
+    {%  for block in self.content %}
+        {% include_block block %}
+    {% endfor %}
+    </div>
+</section>

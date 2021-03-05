@@ -1,1 +1,4 @@
-wagtail-block-collection
+# wagtail-block-collection
+
+## Todo
+- Add scalling options to the img block

@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+
+<section class="{{ self.bottom_effect }}" style="z-index: calc(100 - {{ block_count }});; position: relative; background: linear-gradient({{ self.angel }}deg,
+            {% for stop in self.stops %}
+                {{ stop.color }} {{ stop.stop }}% {% if not forloop.last %}, {% endif %}
+            {% endfor %});
+        text-align: center !important;
+        color: {{ self.text_color }};
+        padding: 6rem 0;">
+    <div class="{% if self.full_width %}container-fluid{% else %}container{% endif %}">
+    {%  for block in self.content %}
+        {% include_block block with block_count=forloop.counter %}
+    {% endfor %}
+    </div>
+</section>

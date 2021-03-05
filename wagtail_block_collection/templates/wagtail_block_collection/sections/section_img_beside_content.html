@@ -1,0 +1,37 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% image self.bg_img width-800 as tmp_photo %}
+
+<section class="{{ self.bottom_effect }}" {% if self.position == "left"%}class="zigzag"{% endif %}
+         style="position: relative; z-index: calc(100 - {{ block_count }}); text-align: center; background-color: {{ self.bg_color }}; color: {{ self.text_color }}; ">
+    <div class="row">
+        {% if self.position == "left"%}
+        <div class="col-md-6">
+            <div class="container" style="margin-bottom: 15px; margin-top: 15px">
+                {%  for block in self.content %}
+                    {% include_block block with block_count=forloop.counter %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="col-md-6" style="background-image: url({{ tmp_photo.url }});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center !important;
+        color: {{ self.text_color }};
+        padding: 6rem 0;">
+        </div>
+        {% if self.position == "right"%}
+        <div class="col-md-6">
+            <div class="container" style="position: relative; margin-bottom: 15px; margin-top: 15px">
+                {%  for block in self.content %}
+                    {% include_block block with block_count=forloop.counter %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>

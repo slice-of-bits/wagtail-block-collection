@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+<button class="btn btn-primary {{ self.button_size }}" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+style="margin-top: 1em; margin-bottom: 1em; color: {{ self.button_text_color }}; color: {{ self.button_background_color }}">
+{{ self.button_text }}
+</button>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body"
+       {% if not content_background_show %}style="background: {{ self.content_background_color }}"
+       {% else%}style="background: none; border-width: 0px;"{% endif %}>
+        {%  for block in self.content %}
+            {% include_block block %}
+        {% endfor %}
+  </div>
+</div>

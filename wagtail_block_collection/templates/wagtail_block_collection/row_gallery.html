@@ -1,0 +1,36 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+<style>
+    #green{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+    #_3Y_4omKhBxgsJWab0Pvtfb{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ZqeD7GpvyYA2hpsM2zSgE{
+        width: 430%;
+    }
+
+</style>
+
+<div id="green">
+    <div id="_3Y_4omKhBxgsJWab0Pvtfb">
+        <div id="ZqeD7GpvyYA2hpsM2zSgE">
+                {% for img in self.imgs %}
+                    <div style="z-index: 4; transform: translate3d(0%, 0px, 0px); width: 100%; display: flex">
+                        {% image img.img width-500 as tmp_photo %}
+                        <img src="{{ tmp_photo.url }}" id="box" style="height: 20vh; align-self: flex-end; position: relative; transform: scale(1.2); width: 80%; min-width: 160px; max-width: 400px; overflow: hidden">
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>

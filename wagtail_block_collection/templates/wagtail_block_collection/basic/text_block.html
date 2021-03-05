@@ -1,0 +1,10 @@
+{% block head %}
+    {% if self.google_font %} <link href="https://fonts.googleapis.com/css2?family={{ self.google_font }}&display=swap" rel="stylesheet">{% endif %}
+{% endblock %}
+
+<div style="
+        {% if self.google_font %}font-family: '{{ self.google_font }}', sans-serif !important;{% endif %}
+        {% if self.text_align %}text-align: {{ self.text_align }}; {% endif %}
+        {% if self.text_color %}color: {{ self.text_color }}; {% endif %}">
+    {{ self.text }}
+</div>

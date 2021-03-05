@@ -1,0 +1,39 @@
+{% load wagtailimages_tags %}
+
+<div class="carousel slide">
+    <ol id="test-nav" class="carousel-indicators">
+      {% for slide in self.slides %}
+        <li></li>
+      {% endfor %}
+    </ol>
+    <div class="img_slider">
+        {% for slide in self.slides %}
+                {% image slide.image height-400 %}
+        {% endfor %}
+    </div>
+    <a id="test-prev" class="carousel-control-prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a id="test-next" class="carousel-control-next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<script>
+    var slider = tns({
+        "container": ".img_slider",
+        "slideBy": "page",
+        "mouseDrag": true,
+        "swipeAngle": false,
+        "speed": 400,
+        "autoWidth": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false,
+        "navContainer": "#test-nav",
+        "prevButton": "#test-prev",
+        "nextButton": "#test-next",
+        "center": true,
+    });
+</script>

@@ -1,0 +1,21 @@
+kind: pipeline
+name: django backend
+type: docker
+
+steps:
+- name: install requirements
+  image: python
+  commands:
+    - pip install -r requirements.txt
+- name: pypi_publish
+  image: plugins/pypi
+  settings:
+    username:
+      from_secret: pypi_username
+    password:
+      from_secret: pypi_password
+  when:
+    branch:
+      - master
+    event:
+      - tag

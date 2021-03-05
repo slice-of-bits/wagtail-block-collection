@@ -1,0 +1,13 @@
+{% block head %}
+    {% if self.google_font %} <link href="https://fonts.googleapis.com/css2?family={{ self.google_font }}&display=swap" rel="stylesheet">{% endif %}
+{% endblock %}
+
+{% if self.heading_type == "h1" %}
+    <h1 style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}">{{ self.title }}</h1>
+{% elif self.heading_type == "h2" %}
+    <h2 style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}">{{ self.title }}</h2>
+{% elif self.heading_type == "h3" %}
+    <h3 style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}">{{ self.title }}</h3>
+{% elif self.heading_type == "h4" %}
+    <h4 style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}">{{ self.title }}</h4>
+{% endif %}

@@ -1,0 +1,16 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+<div class="card-deck">
+    {% for card in self.cards %}
+        {% image card.image width-400 as tmp_photo %}
+        <div class="card">
+            <img class="card-img-top" src="{{ tmp_photo.url }}" alt="Card image cap">
+            <div class="card-body" style="background: {{ card.bg_color }}">
+              <h5 class="card-title">{{ card.title }}</h5>
+              <p class="card-text">{{ card.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
