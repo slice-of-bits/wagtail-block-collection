@@ -273,7 +273,7 @@ class RowGallery(blocks.StructBlock):
 # ##########
 # Sections #
 ############
-basic_content = [
+all_blocks = [
         ("basic_text_block", BasicTextBlock()),
         ("basic_text_and_image_block", BasicTextAndImageBlock()),
         ("basic_title", BasicTitleBlock()),
@@ -298,7 +298,7 @@ class BasicSection(blocks.StructBlock):
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
-    content = blocks.StreamBlock(basic_content)
+    content = blocks.StreamBlock(all_blocks)
 
     class Meta:
         template = 'wagtail_block_collection/sections/basic_section.html'
@@ -311,7 +311,7 @@ class SectionImgParalax(blocks.StructBlock):
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
-    content = blocks.StreamBlock(basic_content)
+    content = blocks.StreamBlock(all_blocks)
 
     class Meta:
         template = 'wagtail_block_collection/sections/section_img_paralex.html'
@@ -324,7 +324,7 @@ class SectionImg(blocks.StructBlock):
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
-    content = blocks.StreamBlock(basic_content)
+    content = blocks.StreamBlock(all_blocks)
 
     class Meta:
         template = 'wagtail_block_collection/sections/section_img.html'
@@ -343,7 +343,7 @@ class SectionGradient(blocks.StructBlock):
             ('stop', blocks.IntegerBlock(min_value=0, max_value=100))
         ])
     )
-    content = blocks.StreamBlock(basic_content)
+    content = blocks.StreamBlock(all_blocks)
 
     class Meta:
         template = 'wagtail_block_collection/sections/section_gradient.html'
@@ -357,7 +357,7 @@ class SectionImgBesideContent(blocks.StructBlock):
     text_color = NativeColorBlock(required=True, help_text="All the text inside the section will get this collor")
     position = blocks.ChoiceBlock(choices=[('left', 'left'), ('right', 'right')])
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
-    content = blocks.StreamBlock(basic_content)
+    content = blocks.StreamBlock(all_blocks)
 
     class Meta:
         template = 'wagtail_block_collection/sections/section_img_beside_content.html'
