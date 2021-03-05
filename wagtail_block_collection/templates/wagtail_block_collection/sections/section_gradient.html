@@ -1,4 +1,7 @@
 {% load wagtailcore_tags %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_block_collection/sections.css' %}">
+{% endblock %}
 
 <section class="{{ self.bottom_effect }}" style="z-index: calc(100 - {{ block_count }});; position: relative; background: linear-gradient({{ self.angel }}deg,
             {% for stop in self.stops %}

@@ -1,0 +1,7 @@
+/* tiny slider styling */
+.carousel-indicators li{
+    height: 5px;
+}
+.tns-nav-active{
+    opacity: unset !important;
+}

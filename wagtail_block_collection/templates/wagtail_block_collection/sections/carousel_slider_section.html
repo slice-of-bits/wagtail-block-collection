@@ -1,4 +1,7 @@
 {% load wagtailimages_tags %}
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_block_collection/sections.css' %}">
+{% endblock %}
 
 <div class="carousel slide">
   <ol id="{{ self.id }}-nav" class="carousel-indicators">
