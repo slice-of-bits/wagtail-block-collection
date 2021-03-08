@@ -1,9 +1,8 @@
 [![Build Status](https://drone.sliceofbits.com/api/badges/slice-of-bits/wagtail-block-collection/status.svg)](https://drone.sliceofbits.com/slice-of-bits/wagtail-block-collection)
-![PyPI](https://img.shields.io/pypi/v/wagtail-block-collection)
-![PyPI - Downloads](https://img.shields.io/pypi/dw/wagtail-block-collection?label=donwloads%2Fweek)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/wagtail-block-collection?label=donwloads%2Fmonth)
+[![PyPI](https://img.shields.io/pypi/v/wagtail-block-collection)](https://pypi.org/project/wagtail-block-collection/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dw/wagtail-block-collection?label=downloads%2Fweek)](https://pypi.org/project/wagtail-block-collection/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/wagtail-block-collection?label=downloads%2Fmonth)](https://pypi.org/project/wagtail-block-collection/)
 ![PyPI - License](https://img.shields.io/pypi/l/wagtail-block-collection)
-![PyPI](https://img.shields.io/pypi/v/wagtail-block-collectiontail-block-collection)
 ![GitHub followers](https://img.shields.io/github/followers/slice-of-bits?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
 

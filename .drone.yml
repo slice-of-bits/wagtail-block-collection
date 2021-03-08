@@ -17,3 +17,25 @@ steps:
   when:
     event:
       - tag
+
+---
+kind: pipeline
+name: docs
+type: docker
+
+steps:
+- name: build the docs
+  image: python:latest
+  commands:
+  - pip install -r docs/requirements.txt
+  - mkdocs build
+- name: build docker image
+  image: plugins/docker
+  settings:
+    username:
+      from_secret: username
+    password:
+      from_secret: password
+    repo: registry.sliceofbits.com/wagtail-block-collection-docs
+    registry: registry.sliceofbits.com/
+    tags: latest
