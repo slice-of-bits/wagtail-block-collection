@@ -39,3 +39,8 @@ steps:
     repo: registry.sliceofbits.com/wagtail-block-collection-docs
     registry: registry.sliceofbits.com/
     tags: latest
+  when:
+    branch:
+    - master
+    event:
+    - push

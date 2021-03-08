@@ -1,10 +1,7 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
-{% block extra_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/wagtail_block_collection/sections.css' %}">
-{% endblock %}
 
-{% image self.bg_img width-1200 as tmp_photo %}
+{% image self.background_img width-1200 as tmp_photo %}
 
 <section class="{{ self.bottom_effect }}" style="background-image: url({{ tmp_photo.url }});
         position: relative;

@@ -81,7 +81,7 @@ class BasicButtonBlock(blocks.StructBlock):
     page = blocks.PageChooserBlock(required=False, help_text="the page you want tot point the button to")
     url = blocks.URLBlock(required=False, help_text="Point to a external URL")
     text = blocks.CharBlock(required=True, help_text="The text on the button")
-    bg_color = NativeColorBlock(required=True, help_text="HEX value of a color")
+    background_color = NativeColorBlock(required=True, help_text="HEX value of a color")
     text_color = NativeColorBlock(required=True, help_text="HEX value of a color")
     size = blocks.ChoiceBlock(choices=[('btn-lg', 'big'), (' ', 'normal'), ('btn-ls', 'small')])
     google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
@@ -172,7 +172,7 @@ class BasicCardDeck(blocks.StructBlock):
             ("description", blocks.TextBlock(required=False)),
             ("button_page", blocks.PageChooserBlock(required=False)),
             ("button_url", blocks.URLBlock(required=False, help_text="is used if no page is set")),
-            ("bg_color", NativeColorBlock(required=False)),
+            ("background_color", NativeColorBlock(required=False)),
         ])
     )
 
@@ -229,7 +229,7 @@ class Row(blocks.StructBlock):
 class CollapseBlockButton(blocks.StructBlock):
     """Collapse some context using a button"""
     button_text = blocks.CharBlock(required=True)
-    button_bg_color = NativeColorBlock(required=True)
+    button_background_color = NativeColorBlock(required=True)
     button_text_color = NativeColorBlock(required=True)
     button_size = blocks.ChoiceBlock(choices=[('btn-lg', 'big'), (' ', 'normal'), ('btn-ls', 'small')])
     button_google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
@@ -294,7 +294,7 @@ all_blocks = [
 
 class BasicSection(blocks.StructBlock):
     """Basic section with a solid color background"""
-    bg_color = NativeColorBlock(required=True, help_text="The hex value of the background")
+    background_color = NativeColorBlock(required=True, help_text="The hex value of the background")
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
@@ -307,7 +307,7 @@ class BasicSection(blocks.StructBlock):
 
 class SectionImgParalax(blocks.StructBlock):
     """Section with a image as a background and a paralax effect"""
-    bg_img = ImageChooserBlock(required=True)
+    background_img = ImageChooserBlock(required=True)
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
@@ -320,7 +320,7 @@ class SectionImgParalax(blocks.StructBlock):
 
 class SectionImg(blocks.StructBlock):
     """Section with a image background"""
-    bg_img = ImageChooserBlock(required=True)
+    background_img = ImageChooserBlock(required=True)
     text_color = NativeColorBlock(required=True, help_text="The hex value of the text")
     full_width = blocks.BooleanBlock(required=False)
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
@@ -339,7 +339,7 @@ class SectionGradient(blocks.StructBlock):
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])
     stops = blocks.ListBlock(
         blocks.StructBlock([
-            ('color', blocks.CharBlock(required=True)),
+            ('color', NativeColorBlock(required=True)),
             ('stop', blocks.IntegerBlock(min_value=0, max_value=100))
         ])
     )
@@ -352,8 +352,8 @@ class SectionGradient(blocks.StructBlock):
 
 class SectionImgBesideContent(blocks.StructBlock):
     """Show a full width and height image with steamfields beside that"""
-    bg_img = ImageChooserBlock(required=True)
-    bg_color = NativeColorBlock(required=True)
+    background_img = ImageChooserBlock(required=True)
+    background_color = NativeColorBlock(required=True)
     text_color = NativeColorBlock(required=True, help_text="All the text inside the section will get this collor")
     position = blocks.ChoiceBlock(choices=[('left', 'left'), ('right', 'right')])
     bottom_effect = blocks.ChoiceBlock(required=False, choices=[('zigzag', 'zigzag'), ('arrow', 'arrow'), ('arrow_big', 'arrow_big')])

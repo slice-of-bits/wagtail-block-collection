@@ -5,6 +5,7 @@
 ![PyPI - License](https://img.shields.io/pypi/l/wagtail-block-collection)
 ![GitHub followers](https://img.shields.io/github/followers/slice-of-bits?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
+[![Docs](https://img.shields.io/badge/docs-passing-brightgreen)](https://wagtail-block-collection.sliceofbits.com/)
 
 :warning: This project is very beta :warning:️  
 :warning: And this i my first python package :warning:️  
