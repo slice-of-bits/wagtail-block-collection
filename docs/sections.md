@@ -1,7 +1,7 @@
 # Sections
 ## Empty sections
 These sections can be used to place content inside
-## settings
+## Settings
 **Text color:** the Color of the text inside this section  
 **Full width:** this makes this section full width instead of ``.container-fluid``  
 **Bottom effect:** these are effects to style the bottom of the section  
@@ -18,7 +18,7 @@ This section is the most basic one there is. It is just a simple colored backgro
 This section uses css gradients as the background
 #### Options
 [See settings](#settings) for the general settings
-##### stops
+##### Stops
 Stops are the diverent colors in the gradient.
 You can use a tool like [cssgradient.io](https://cssgradient.io/) to easy visualize the gradient.  
 **Color:** Is the color of the step  
