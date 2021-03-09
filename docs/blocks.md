@@ -1,5 +1,6 @@
 # Blocks
 ## Button
+![buttons](imgs/blocks/buttons.png)
 ### Options
 #### Page & Url
 You can set on of these to point your button to something
@@ -21,7 +22,7 @@ Choose how to align the text if not it is inherited if you use the included sect
 #### Text color
 You can override the text color inherited form the section
 #### Google font
-@todo
+
 #### Text
 The rich text that wil be displayed on the page.
 
@@ -38,5 +39,19 @@ The rich text that wil be displayed on the page.
 ## Collapse with button
 
 ## Line
+![Lines](imgs/blocks/lines.png)
+### Options
+#### Width
+The css unit on how wide the line needs to be.
+#### Thicknes
+The css unit how thick the line will be
+### Style
+**Doted:**  
+**Dashed:**  
+**Solid:**
 
 ## Google Maps
+
+!!! note
+    Before you can use this you need to set the API key in your settings
+

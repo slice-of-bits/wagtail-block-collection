@@ -33,7 +33,6 @@ class Spacer(blocks.StructBlock):
 
 class Line(blocks.StructBlock):
     """A simple line with a few options"""
-    spacing = blocks.CharBlock(required=True, help_text="any CSS unit supported px, %, rem, vh enz")
     width = blocks.CharBlock(required=False, help_text="any CSS unit supported px, %, rem, vh enz")
     thickness = blocks.CharBlock(required=True, help_text="any CSS unit supported px, %, rem, vh enz")
     color = NativeColorBlock(required=False)
@@ -221,7 +220,7 @@ class Row(blocks.StructBlock):
 
     class Meta:
         icon = "fa-table"
-        template = 'wagtail_block_collection/row.html'
+        template = 'wagtail_block_collection/layout/row.html'
         group = "Layout"
         label = "Column"
 

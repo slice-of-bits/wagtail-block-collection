@@ -7,7 +7,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
 [![Docs](https://img.shields.io/badge/docs-passing-brightgreen)](https://wagtail-block-collection.sliceofbits.com/)
 
-:warning: This project is very beta :warning:️  
+:warning: This project is very beta everything can change any second :warning:️  
 :warning: And this i my first python package :warning:️  
 :warning: So no garanties of any kind :warning:️ 
 # wagtail-block-collection
