@@ -9,9 +9,27 @@ Add the following enteries to your settings.py in the INSTALLED_APPS section:
 'wagtail_block_collection',
 'wagtailfontawesome',
 'wagtail_color_panel',
+'wagtail.contrib.settings',
 ```
 No you can import any of the blocks from ``wagtail_block_collection.blocks``  
 Or you can import them all using ``all_blocks``
+
+Add the following to the tempalte context processors
+```python
+TEMPLATES = [
+    {
+        ...
+        'OPTIONS': {
+            'context_processors': [
+                ...
+                'wagtail.contrib.settings.context_processors.settings',
+            ],
+        },
+    },
+]
+```
+
+## Example usage
 Example flex page:
 ```python
 class FlexPage(Page):

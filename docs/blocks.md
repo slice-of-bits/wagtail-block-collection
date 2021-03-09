@@ -53,5 +53,5 @@ The css unit how thick the line will be
 ## Google Maps
 
 !!! note
-    Before you can use this you need to set the API key in your settings
+    Before you can use this block you need to set the Google api key in the wagtail settings
 

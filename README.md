@@ -64,9 +64,12 @@ Add the following enteries to your settings.py in the INSTALLED_APPS section:
 'wagtail_block_collection',
 'wagtailfontawesome',
 'wagtail_color_panel',
+'wagtail.contrib.settings',
 ```
 No you can import any of the blocks from ``wagtail_block_collection.blocks``  
 Or you can import them all using ``all_blocks``
+
+Add
 
 ## Todo
 - Add documentation

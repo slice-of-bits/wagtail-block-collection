@@ -2,6 +2,7 @@ from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtailfontawesome.blocks import IconBlock
 from wagtail_color_panel.blocks import NativeColorBlock
+from django.conf import settings
 
 
 class ImgSlider(blocks.StructBlock):
@@ -82,7 +83,7 @@ class BasicButtonBlock(blocks.StructBlock):
     text = blocks.CharBlock(required=True, help_text="The text on the button")
     background_color = NativeColorBlock(required=True, help_text="HEX value of a color")
     text_color = NativeColorBlock(required=True, help_text="HEX value of a color")
-    size = blocks.ChoiceBlock(choices=[('btn-lg', 'big'), (' ', 'normal'), ('btn-ls', 'small')])
+    size = blocks.ChoiceBlock(choices=[('btn-lg', 'big'), (' ', 'normal'), ('btn-sm', 'small')])
     google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
 
     class Meta:
@@ -182,16 +183,15 @@ class BasicCardDeck(blocks.StructBlock):
         label = "Card Equal Height"
 
 
-class GMapsIframe(blocks.StructBlock):
+class GoogleMapsBlock(blocks.StructBlock):
     """Google maps block"""
-    querie = blocks.CharBlock(required=True, max_length=128,
+    location = blocks.CharBlock(required=True, max_length=128,
                               help_text="the google maps search where you want to put the marker")
-    apiKey = blocks.CharBlock(required=True, max_length=128)
     height = blocks.CharBlock(required=True, help_text="any CSS unit supported px, %, rem, vh enz")
 
     class Meta:
         icon = 'fa-map'
-        template = 'wagtail_block_collection/g_maps.html'
+        template = 'wagtail_block_collection/special/google_maps.html'
         label = "Google maps"
         group = "Special"
 
@@ -213,7 +213,7 @@ class Row(blocks.StructBlock):
                 ("EmbedBlock", EmbedBlock()),
                 ("Spacer", Spacer()),
                 ("Line", Line()),
-                ("GMapsIframe", GMapsIframe()),
+                ("GoogleMapsBlock", GoogleMapsBlock()),
             ]))
         ])
     )
@@ -247,7 +247,7 @@ class CollapseBlockButton(blocks.StructBlock):
             ("Spacer", Spacer()),
             ("Row", Row()),
             ("Line", Line()),
-            ("GMapsIframe", GMapsIframe()),
+            ("GoogleMapsBlock", GoogleMapsBlock()),
         ])
 
     class Meta:
@@ -286,7 +286,7 @@ all_blocks = [
         ("Spacer", Spacer()),
         ("CollapeBlockButton", CollapseBlockButton()),
         ("Line", Line()),
-        ("GMapsIframe", GMapsIframe()),
+        ("GoogleMapsBlock", GoogleMapsBlock()),
         ("ImgSlider", ImgSlider()),
     ]
 
