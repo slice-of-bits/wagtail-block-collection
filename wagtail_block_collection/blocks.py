@@ -51,7 +51,7 @@ class BasicImgBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'image'
-        template = 'wagtail_block_collection/basic/img_block.html'
+        template = 'wagtail_block_collection/media/img_block.html'
         group = "Media"
         label = "Image"
 
