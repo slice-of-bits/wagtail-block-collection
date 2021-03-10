@@ -1,10 +1,11 @@
 # How to install
 
-You need to have a working Wagtail project and the bootstrap 5.0 .css and .js
+You need to have a working Wagtail project and the bootstrap 5.0 .css and .js (bootstrap 4 wil probably work but no guaranties)
+Install the plugin using pip
 ```
 pip install wagtail-block-collection
 ```
-Add the following enteries to your settings.py in the INSTALLED_APPS section:
+Add the following entries to your settings.py in the INSTALLED_APPS section:
 ```
 'wagtail_block_collection',
 'wagtailfontawesome',
@@ -14,7 +15,7 @@ Add the following enteries to your settings.py in the INSTALLED_APPS section:
 No you can import any of the blocks from ``wagtail_block_collection.blocks``  
 Or you can import them all using ``all_blocks``
 
-Add the following to the tempalte context processors
+Add the following to the template context processors
 ```python
 TEMPLATES = [
     {

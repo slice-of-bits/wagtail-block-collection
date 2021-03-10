@@ -2,12 +2,10 @@ from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtailfontawesome.blocks import IconBlock
 from wagtail_color_panel.blocks import NativeColorBlock
-from django.conf import settings
 
 
 class ImgSlider(blocks.StructBlock):
     """A slider of images using tiny slider"""
-
     slides = blocks.ListBlock(
         blocks.StructBlock([
             ("image", ImageChooserBlock(required=False)),
@@ -16,8 +14,8 @@ class ImgSlider(blocks.StructBlock):
 
     class Meta:
         icon = 'fa-object-ungroup'
-        template = 'wagtail_block_collection/special/slider_block.html'
-        group = "Slider"
+        template = 'wagtail_block_collection/media/slider_block.html'
+        group = "Media"
         label = "IMG Slider"
 
 
@@ -42,7 +40,7 @@ class Line(blocks.StructBlock):
     class Meta:
         icon = 'fa-ellipsis-h'
         template = 'wagtail_block_collection/basic/line_block.html'
-        group = "Layout"
+        group = "Basic"
         label = "Line"
 
 
@@ -54,7 +52,7 @@ class BasicImgBlock(blocks.StructBlock):
     class Meta:
         icon = 'image'
         template = 'wagtail_block_collection/basic/img_block.html'
-        group = "Basic"
+        group = "Media"
         label = "Image"
 
 
@@ -116,17 +114,14 @@ class YoutubeVideoBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'fa-youtube'
-        template = 'wagtail_block_collection/youtube_video_block.html'
-        group = "Basic"
-        label = "Text and Image"
+        template = 'wagtail_block_collection/media/youtube_video_block.html'
+        group = "Media"
+        label = "Youtube video"
 
 
 class EmbedBlock(blocks.StructBlock):
     """For all the stuff that has no streamfield"""
     source = blocks.RawHTMLBlock(required=True, help_text="Just raw HTML code")
-    aspect_ratio = blocks.ChoiceBlock(required=False,
-                                      choices=[('embed-responsive-21by9', '21:9'), ('embed-responsive-16by9', '16:9'),
-                                               ('embed-responsive-4by3', '4:3'), ('embed-responsive-1by1', '1:1')])
 
     class Meta:
         icon = 'fa-code'
@@ -191,9 +186,9 @@ class GoogleMapsBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'fa-map'
-        template = 'wagtail_block_collection/special/google_maps.html'
+        template = 'wagtail_block_collection/miscellaneous/google_maps.html'
         label = "Google maps"
-        group = "Special"
+        group = "Miscellaneous"
 
 
 class Row(blocks.StructBlock):
@@ -257,19 +252,7 @@ class CollapseBlockButton(blocks.StructBlock):
         label = "Collapse with button"
 
 
-class RowGallery(blocks.StructBlock):
-    """Slider of images"""
-    images = blocks.ListBlock(
-        blocks.StructBlock([
-            ('img', ImageChooserBlock(required=True))
-        ])
-    )
-
-    class Meta:
-        template = 'wagtail_block_collection/row_gallery.html'
-
-
-# ##########
+############
 # Sections #
 ############
 all_blocks = [
