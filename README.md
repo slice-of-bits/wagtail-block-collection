@@ -76,3 +76,9 @@ Add
 - Add scaling options to the img block
 - Animations
 - Build a easy way to select icons
+- Tabels
+- Charts
+- Slofan slider
+- Tabs
+- Masonry image
+- Image lazy loading
