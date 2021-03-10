@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 
-{% image self.bg_img width-1200 as tmp_photo %}
+{% image self.background_img width-1200 as tmp_photo %}
 
 <section class="{{ self.bottom_effect }}" style="position: relative;
         z-index: calc(100 - {{ block_count }});

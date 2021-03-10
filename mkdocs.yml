@@ -1,0 +1,32 @@
+site_name: Wagtail block collection
+repo_url: https://github.com/slice-of-bits/wagtail-block-collection
+repo_name: slice-of-bits/wagtail-block-collection
+
+plugins:
+  - search # necessary for search to work
+  - git-revision-date-localized:
+      type: date
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Sections: sections.md
+  - Blocks: blocks.md
+  - Dev: dev.md

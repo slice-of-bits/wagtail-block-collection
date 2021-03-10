@@ -11,6 +11,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 install_requires = [
     "wagtail>=2.8.1",
     "wagtailfontawesome>=1.1.4",
+    "wagtail-color-panel>=1.2.0",
 ]
 
 # Testing dependencies
@@ -35,9 +36,10 @@ setup(
     author_email='matthijs@sliceofbits.com',
     keywords=['WAGTAIL', 'STREAMFIELD', 'WAGTAIL_BLOCKS', 'WAGTAIL CMS'],
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
+        'Framework :: Wagtail',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
