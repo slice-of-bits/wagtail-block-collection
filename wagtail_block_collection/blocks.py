@@ -4,6 +4,24 @@ from wagtailfontawesome.blocks import IconBlock
 from wagtail_color_panel.blocks import NativeColorBlock
 
 
+class TypeWriter(blocks.StructBlock):
+    heading_type = blocks.ChoiceBlock(choices=[('h1', 'h1'), ('h2', 'h2'), ('h3', 'h3'), ('h4', 'h4'), ('h5', 'h5')])
+    heading_size = blocks.CharBlock(required=False, help_text="any CSS unit supported px, %, rem, vh enz")
+    google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
+    texts = blocks.ListBlock(
+        blocks.StructBlock([
+            ("text", blocks.CharBlock(required=True, max_length=265)),
+            ("time", blocks.IntegerBlock(required=True)),
+        ])
+    )
+    
+    class Meta:
+        icon = ""
+        template = "wagtail_block_collection/special/typewriter_block.html"
+        group = "Special"
+        label = "Typewriter"
+
+
 class ImgSlider(blocks.StructBlock):
     """A slider of images using tiny slider"""
     slides = blocks.ListBlock(
@@ -191,25 +209,30 @@ class GoogleMapsBlock(blocks.StructBlock):
         group = "Miscellaneous"
 
 
+content_blocks = [
+    ("basic_text_block", BasicTextBlock()),
+    ("basic_text_and_image_block", BasicTextAndImageBlock()),
+    ("basic_title", BasicTitleBlock()),
+    ("basic_cards", BasicCardDeck()),
+    ("BasicIconBlock", BasicIconBlock()),
+    ("BasicButtonBlock", BasicButtonBlock()),
+    ("BasicImgBlock", BasicImgBlock()),
+    ("YoutubeVideoBlock", YoutubeVideoBlock()),
+    ("EmbedBlock", EmbedBlock()),
+    ("Spacer", Spacer()),
+    ("Line", Line()),
+    ("GoogleMapsBlock", GoogleMapsBlock()),
+    ("TypeWriter", TypeWriter()),
+]
+#################
+# Layout blocks #
+#################
 class Row(blocks.StructBlock):
     """Bootstrap collum system"""
     columns = blocks.ListBlock(
         blocks.StructBlock([
             ("col_width", blocks.ChoiceBlock(choices=(('12', '12/12'), ('10', '10/12'), ('8', '8/12'), ('6', '6/12'), ('4', '4/12'), ('2', '2/12')))),
-            ("col_content", blocks.StreamBlock([
-                ("basic_text_block", BasicTextBlock()),
-                ("basic_text_and_image_block", BasicTextAndImageBlock()),
-                ("basic_title", BasicTitleBlock()),
-                ("basic_cards", BasicCardDeck()),
-                ("BasicIconBlock", BasicIconBlock()),
-                ("BasicButtonBlock", BasicButtonBlock()),
-                ("BasicImgBlock", BasicImgBlock()),
-                ("YoutubeVideoBlock", YoutubeVideoBlock()),
-                ("EmbedBlock", EmbedBlock()),
-                ("Spacer", Spacer()),
-                ("Line", Line()),
-                ("GoogleMapsBlock", GoogleMapsBlock()),
-            ]))
+            ("col_content", blocks.StreamBlock(content_blocks))
         ])
     )
 
@@ -229,49 +252,39 @@ class CollapseBlockButton(blocks.StructBlock):
     button_google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
     content_background_show = blocks.BooleanBlock(help_text="If selected the content wil be on a card")
     content_background_color = NativeColorBlock(required=False)
-    content = blocks.StreamBlock([
-            ("basic_text_block", BasicTextBlock()),
-            ("basic_text_and_image_block", BasicTextAndImageBlock()),
-            ("basic_title", BasicTitleBlock()),
-            ("basic_cards", BasicCardDeck()),
-            ("BasicIconBlock", BasicIconBlock()),
-            ("BasicButtonBlock", BasicButtonBlock()),
-            ("BasicImgBlock", BasicImgBlock()),
-            ("YoutubeVideoBlock", YoutubeVideoBlock()),
-            ("EmbedBlock", EmbedBlock()),
-            ("Spacer", Spacer()),
-            ("Row", Row()),
-            ("Line", Line()),
-            ("GoogleMapsBlock", GoogleMapsBlock()),
-        ])
+    content = blocks.StreamBlock(content_blocks)
 
     class Meta:
         icon = "fa-compress"
-        template = 'wagtail_block_collection/collapse_button.html'
+        template = 'wagtail_block_collection/layout/collapse_button.html'
         group = "Layout"
         label = "Collapse with button"
 
 
+class Accordion(blocks.StructBlock):
+    items = blocks.ListBlock(
+        blocks.StructBlock([
+            ("title", blocks.CharBlock(required=True, max_length=128)),
+            ("content", blocks.StreamBlock(content_blocks))
+        ])
+    )
+
+    class Meta:
+        icon = ''
+        template = 'wagtail_block_collection/layout/accordion.html'
+        group = "Layout"
+        label = "Accordion"
+
+
+layout_blocks = [
+    ("Row", Row()),
+    ("CollapseBlockButton", CollapseBlockButton()),
+    ("Accordion", Accordion()),
+]
 ############
 # Sections #
 ############
-all_blocks = [
-        ("basic_text_block", BasicTextBlock()),
-        ("basic_text_and_image_block", BasicTextAndImageBlock()),
-        ("basic_title", BasicTitleBlock()),
-        ("basic_cards", BasicCardDeck()),
-        ("Row", Row()),
-        ("BasicIconBlock", BasicIconBlock()),
-        ("BasicButtonBlock", BasicButtonBlock()),
-        ("BasicImgBlock", BasicImgBlock()),
-        ("YoutubeVideoBlock", YoutubeVideoBlock()),
-        ("EmbedBlock", EmbedBlock()),
-        ("Spacer", Spacer()),
-        ("CollapeBlockButton", CollapseBlockButton()),
-        ("Line", Line()),
-        ("GoogleMapsBlock", GoogleMapsBlock()),
-        ("ImgSlider", ImgSlider()),
-    ]
+all_blocks = content_blocks + layout_blocks
 
 
 class BasicSection(blocks.StructBlock):
