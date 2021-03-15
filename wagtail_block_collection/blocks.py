@@ -22,7 +22,7 @@ class TypeWriter(blocks.StructBlock):
         label = "Typewriter"
 
 
-class ImgSlider(blocks.StructBlock):
+class ImageSlider(blocks.StructBlock):
     """A slider of images using tiny slider"""
     slides = blocks.ListBlock(
         blocks.StructBlock([
@@ -63,7 +63,7 @@ class Line(blocks.StructBlock):
 
 
 #TODO a easy way to add scaling options
-class BasicImgBlock(blocks.StructBlock):
+class ImageBlock(blocks.StructBlock):
     """A basic image"""
     img = ImageChooserBlock(required=True, help_text="Select a nice photo")
 
@@ -74,7 +74,7 @@ class BasicImgBlock(blocks.StructBlock):
         label = "Image"
 
 
-class BasicTextBlock(blocks.StructBlock):
+class TextBlock(blocks.StructBlock):
     """The main text block using the rich text option"""
     text_align = blocks.ChoiceBlock(required=False, help_text="If not set section settings wil be used", choices=[
         ('left', 'left'),
@@ -109,7 +109,7 @@ class BasicButtonBlock(blocks.StructBlock):
         label = "Button"
 
 
-class BasicTextAndImageBlock(blocks.StructBlock):
+class TextAndImageBlock(blocks.StructBlock):
     """Image with the text beside"""
     title = blocks.CharBlock(required=False, max_length=128, help_text="Title for this block")
     text = blocks.RichTextBlock(required=True, help_text="Text for this block")
@@ -162,7 +162,7 @@ class BasicTitleBlock(blocks.StructBlock):
         label = "Title"
 
 
-class BasicIconBlock(blocks.StructBlock):
+class IconBlock(blocks.StructBlock):
     """Basic fontawesome icons"""
     icon_color = NativeColorBlock(required=True)
     icon_size = blocks.CharBlock(max_length=10, required=True, help_text="any CSS unit supported px, %, rem, vh enz")
@@ -210,19 +210,20 @@ class GoogleMapsBlock(blocks.StructBlock):
 
 
 content_blocks = [
-    ("basic_text_block", BasicTextBlock()),
-    ("basic_text_and_image_block", BasicTextAndImageBlock()),
-    ("basic_title", BasicTitleBlock()),
-    ("basic_cards", BasicCardDeck()),
-    ("BasicIconBlock", BasicIconBlock()),
+    ("TextBlock", TextBlock()),
+    ("TextAndImageBlock", TextAndImageBlock()),
+    ("BasicTitleBlock", BasicTitleBlock()),
+    ("BasicCardDeck", BasicCardDeck()),
+    ("IconBlock", IconBlock()),
     ("BasicButtonBlock", BasicButtonBlock()),
-    ("BasicImgBlock", BasicImgBlock()),
+    ("ImageBlock", ImageBlock()),
     ("YoutubeVideoBlock", YoutubeVideoBlock()),
     ("EmbedBlock", EmbedBlock()),
     ("Spacer", Spacer()),
     ("Line", Line()),
     ("GoogleMapsBlock", GoogleMapsBlock()),
     ("TypeWriter", TypeWriter()),
+    ("ImageSlider", ImageSlider()),
 ]
 #################
 # Layout blocks #
