@@ -1,0 +1,9 @@
+{% block head %}
+    {% if self.google_font %} <link href="https://fonts.googleapis.com/css2?family={{ self.google_font }}&display=swap" rel="stylesheet">{% endif %}
+{% endblock %}
+
+<{{ self.heading_type }}
+    class="typewrite" style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}"
+    data='[{% for text in self.texts %}["{{ text.text }}", "{{ text.time }}"]{% if not forloop.last %},{% endif %}{% endfor %} ]' >
+    <span class="wrap"></span>
+</{{ self.heading_type }}>
