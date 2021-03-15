@@ -1,5 +1,4 @@
 # How to install
-
 You need to have a working Wagtail project and the bootstrap 5.0 .css and .js (bootstrap 4 wil probably work but no guaranties)
 Install the plugin using pip
 ```
@@ -11,6 +10,12 @@ Add the following entries to your settings.py in the INSTALLED_APPS section:
 'wagtailfontawesome',
 'wagtail_color_panel',
 'wagtail.contrib.settings',
+```
+At the following css and js files to your base.html
+```html
+<link rel="stylesheet" type="text/css" href="{% static 'wagtail_block_collection/css/sections.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'wagtail_block_collection/css/slider.css' %}">
+<script src="{% static 'wagtail_block_collection/js/typewriter.js' %}"></script>
 ```
 No you can import any of the blocks from ``wagtail_block_collection.blocks``  
 Or you can import them all using ``all_blocks``

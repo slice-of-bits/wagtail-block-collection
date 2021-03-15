@@ -55,30 +55,32 @@ Planed
 - Price table
 
 ## Quickstart
+This is the short version of what is in the [docs](https://wagtail-block-collection.sliceofbits.com/)  
+
 You need to have a working Wagtail project and the bootstrap 5.0 .css and .js
 ```
 pip install wagtail-block-collection
 ```
 Add the following enteries to your settings.py in the INSTALLED_APPS section:
 ```
-'wagtail_block_collection',
 'wagtailfontawesome',
 'wagtail_color_panel',
 'wagtail.contrib.settings',
+'wagtail_block_collection',
 ```
-No you can import any of the blocks from ``wagtail_block_collection.blocks``  
+Make sure you have the ``'wagtail.contrib.settings.context_processors.settings',`` templates context_processors 
+
+Now you can import any of the blocks from ``wagtail_block_collection.blocks``  
 Or you can import them all using ``all_blocks``
 
-Add
-
 ## Todo
-- Add documentation
+- Add more documentation
 - Add scaling options to the img block
 - Animations
 - Build a easy way to select icons
 - Tabels
 - Charts
-- Slofan slider
+- More slider
 - Tabs
 - Masonry image
 - Image lazy loading
