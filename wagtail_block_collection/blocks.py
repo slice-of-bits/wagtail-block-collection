@@ -127,8 +127,10 @@ class YoutubeVideoBlock(blocks.StructBlock):
     """Easy way to add a YouTube video"""
     video_id = blocks.CharBlock(required=True, help_text="the part after ?v=")
     aspect_ratio = blocks.ChoiceBlock(required=False, help_text="this helps with scaling",
-                                      choices=[('embed-responsive-21by9', '21:9'), ('embed-responsive-16by9', '16:9'),
-                                               ('embed-responsive-4by3', '4:3'), ('embed-responsive-1by1', '1:1')])
+                                      choices=[('ratio-21x9', '21:9'),
+                                               ('ratio-16x9', '16:9'),
+                                               ('ratio-4x3', '4:3'),
+                                               ('ratio-1x1', '1:1')])
 
     class Meta:
         icon = 'fa-youtube'
