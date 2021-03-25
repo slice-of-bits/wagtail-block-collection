@@ -116,3 +116,7 @@
     margin-bottom: -80px;
     clip-path: polygon(100% calc(100% - 80px), 50% 100%, 0 calc(100% - 80px), 0 0, 100% 0);
 }
+
+.alert p{
+    margin-bottom: 0;
+}

@@ -1,14 +1,14 @@
 [![Build Status](https://drone.sliceofbits.com/api/badges/slice-of-bits/wagtail-block-collection/status.svg)](https://drone.sliceofbits.com/slice-of-bits/wagtail-block-collection)
+[![Docs](https://img.shields.io/badge/docs-passing-brightgreen)](https://wagtail-block-collection.sliceofbits.com/)
 [![PyPI](https://img.shields.io/pypi/v/wagtail-block-collection)](https://pypi.org/project/wagtail-block-collection/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dw/wagtail-block-collection?label=downloads%2Fweek)](https://pypi.org/project/wagtail-block-collection/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/wagtail-block-collection?label=downloads%2Fmonth)](https://pypi.org/project/wagtail-block-collection/)
 ![PyPI - License](https://img.shields.io/pypi/l/wagtail-block-collection)
 ![GitHub followers](https://img.shields.io/github/followers/slice-of-bits?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
-[![Docs](https://img.shields.io/badge/docs-passing-brightgreen)](https://wagtail-block-collection.sliceofbits.com/)
 
 :warning: This project is very beta everything can change any second :warning:️  
-:warning: And this i my first python package :warning:️  
+:warning: And this is my first python package :warning:️  
 :warning: So no garanties of any kind :warning:️ 
 # wagtail-block-collection
 A collection of some basic wagtail streamfields blocks.
@@ -44,11 +44,12 @@ They van be used without the sections
 - Line
 - Google maps
 - IMG slider
+- Alert
+- Bootstrap accordion
 
 Planed
 - Vimeo video
 - More sliders
-- Bootstrap accordion
 - Bootstrap alert
 - Bootstrap buttongroup
 - Icon list
