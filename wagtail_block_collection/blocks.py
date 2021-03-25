@@ -211,6 +211,26 @@ class GoogleMapsBlock(blocks.StructBlock):
         group = "Miscellaneous"
 
 
+class AlertBlock(blocks.StructBlock):
+    """Bootstrap alert block"""
+    type = blocks.ChoiceBlock(required=True, choices=(('alert-primary', 'primary'),
+                                                      ('alert-secondary', 'secondary'),
+                                                      ('alert-success', 'success'),
+                                                      ('alert-danger', 'danger'),
+                                                      ('alert-warning', 'info'),
+                                                      ('alert-light', 'light'),
+                                                      ('alert-dark', 'dark'))
+                              )
+    allow_dismiss = blocks.BooleanBlock(required=False)
+    content = blocks.RichTextBlock(required=True)
+
+    class Meta:
+        icon = 'fa-alert'
+        template = 'wagtail_block_collection/special/alert.html'
+        label = "Alert"
+        group = "Special"
+
+
 content_blocks = [
     ("TextBlock", TextBlock()),
     ("TextAndImageBlock", TextAndImageBlock()),
@@ -226,6 +246,7 @@ content_blocks = [
     ("GoogleMapsBlock", GoogleMapsBlock()),
     ("TypeWriter", TypeWriter()),
     ("ImageSlider", ImageSlider()),
+    ("AlertBlock", AlertBlock()),
 ]
 #################
 # Layout blocks #
