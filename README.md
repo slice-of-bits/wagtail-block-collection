@@ -7,9 +7,9 @@
 ![GitHub followers](https://img.shields.io/github/followers/slice-of-bits?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
 
-:warning: This project is very beta everything can change any second :warning:️  
-:warning: And this is my first python package :warning:️  
-:warning: So no garanties of any kind :warning:️ 
+:exclamation: This project is very beta everything can change any second  
+:exclamation: And this is my first python package   
+:exclamation: So no garanties of any kind  
 # wagtail-block-collection
 A collection of some basic wagtail streamfields blocks.
 Based on bootstrap 5.0
