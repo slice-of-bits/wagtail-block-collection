@@ -1,0 +1,14 @@
+{% block head %}
+    {% if self.google_font %} <link href="https://fonts.googleapis.com/css2?family={{ self.google_font }}&display=swap" rel="stylesheet">{% endif %}
+{% endblock %}
+
+
+<{{ self.heading_type }}
+style="{% if self.google_font %} font-family: '{{ self.google_font }}', sans-serif !important;{% endif %} font-size:{{ self.heading_size }}"
+data-to-date="{{ self.to_datetime | date:"M j, Y G:i:s" }}"
+data-seconds-string="{{ self.second_string }}"
+data-minutes-string="{{ self.minute_string }}"
+data-hours-string="{{ self.hour_string }}"
+data-days-string="{{ self.day_string }}"
+id="countdown">
+</{{ self.heading_type }}>

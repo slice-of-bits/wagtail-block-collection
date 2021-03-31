@@ -7,9 +7,9 @@
 ![GitHub followers](https://img.shields.io/github/followers/slice-of-bits?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/slice-of-bits/wagtail-block-collection?style=social)
 
-:warning: This project is very beta everything can change any second :warning:️  
-:warning: And this is my first python package :warning:️  
-:warning: So no garanties of any kind :warning:️ 
+:exclamation: This project is very beta everything can change any second  
+:exclamation: And this is my first python package   
+:exclamation: So no garanties of any kind  
 # wagtail-block-collection
 A collection of some basic wagtail streamfields blocks.
 Based on bootstrap 5.0
@@ -17,18 +17,18 @@ Based on bootstrap 5.0
 The blocks are divided in two categories:  
 **Sections**  
 Sections are a group of multiple blocks and include settings like the background.
-They are perfect for the basic one page layout  
+They are perfect for the basic one-page layout  
 **Blocks**  
 These are just your normal streamfields to fill your site with content.
 They van be used without the sections
 
 ## Sections
 - Basic color background
-- paralax img background
+- Paralax img background
 - img background
 - gradient background
 - section content and image side by side
-- Full with (and hight) slider
+- Full-width (and height) slider
 ## Blocks
 - Text
 - Img + Text
@@ -46,23 +46,24 @@ They van be used without the sections
 - IMG slider
 - Alert
 - Bootstrap accordion
+- Bootstrap alert
+- Countdown
 
 Planed
-- Vimeo video
 - More sliders
-- Bootstrap alert
 - Bootstrap buttongroup
 - Icon list
 - Price table
+- Counter
 
 ## Quickstart
 This is the short version of what is in the [docs](https://wagtail-block-collection.sliceofbits.com/)  
 
-You need to have a working Wagtail project and the bootstrap 5.0 .css and .js
+You need to have a working Wagtail project and the [bootstrap 5.0 .css and .js](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 ```
 pip install wagtail-block-collection
 ```
-Add the following enteries to your settings.py in the INSTALLED_APPS section:
+Add the following entries to your settings.py in the INSTALLED_APPS section:
 ```
 'wagtailfontawesome',
 'wagtail_color_panel',
@@ -79,9 +80,17 @@ Or you can import them all using ``all_blocks``
 - Add scaling options to the img block
 - Animations
 - Build a easy way to select icons
-- Tabels
 - Charts
-- More slider
 - Tabs
 - Masonry image
 - Image lazy loading
+
+## Support this project
+### Committing code
+If you want to add a new cool block or see something that could be better?
+Just fork this project and then open a pull request.
+I know I am not perfect but please clean and understandable code.
+### Send me a coffee
+<a href="https://buymeacoffee.com/SliceOfBits">
+    <img alt="Buy Me A Coffee" src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" style="height: auto !important; width: auto !important;" />
+</a>
