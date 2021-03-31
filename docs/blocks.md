@@ -32,7 +32,7 @@ The rich text that wil be displayed on the page.
 ``wagtail_block_collection.blocks import ImageBlock``  
 
 ## Row
-``wagtail_block_collection.blocks import TypeWriter``  
+``wagtail_block_collection.blocks import Row``  
 This is the bootstrap grid system
 
 ## Embed code
@@ -49,7 +49,7 @@ This block can be used to include html code like custom iframes
 ``wagtail_block_collection.blocks import BasicCardDeck``  
 
 ## Collapse with button
-``wagtail_block_collection.blocks import TypeWriter``  
+``wagtail_block_collection.blocks import CollapseBlockButton``  
 
 ## Line
 ``wagtail_block_collection.blocks import Line``  
@@ -65,7 +65,7 @@ The css unit how thick the line will be
 **Solid:**
 
 ## Google Maps
-``wagtail_block_collection.blocks import GoogleMapsBlock``
+``wagtail_block_collection.blocks import GoogleMapsBlock``   
 !!! note
     Before you can use this block you need to set the Google api key in the wagtail settings
 
@@ -81,3 +81,29 @@ The css unit how thick the line will be
 
 ## Icon
 ``wagtail_block_collection.blocks import IconBlock``
+
+## Countdown
+``wagtail_block_collection.blocks import CountdownBlock``
+### Options
+#### to_datetime
+The date time you want to countdown to
+#### day_string
+This is the text that you want to after the day(s) left if you leave is empty the value will not be shown.
+#### hour_string
+This is the text that you want to after the hour(s) left if you leave is empty the value will not be shown.
+#### minute_string
+This is the text that you want to after the minute(s) left if you leave this empty the value will not be shown.
+#### second_string
+This is the text that you want to after the days left if you leave this empty the value will not be shown.
+heading_type
+heading_size
+google_font
+
+## Accordion
+``wagtail_block_collection.blocks import Accordion``
+
+## Text and image
+``wagtail_block_collection.blocks import TextAndImageBlock``
+
+## Alert
+``wagtail_block_collection.blocks import AlertBlock``
