@@ -231,6 +231,24 @@ class AlertBlock(blocks.StructBlock):
         group = "Special"
 
 
+class CountdownBlock(blocks.StructBlock):
+    """Bootstrap countdown block"""
+    to_datetime = blocks.DateTimeBlock(required=True)
+    day_string = blocks.CharBlock(required=False)
+    hour_string = blocks.CharBlock(required=False)
+    minute_string = blocks.CharBlock(required=False)
+    second_string = blocks.CharBlock(required=False)
+    heading_type = blocks.ChoiceBlock(choices=[('h1', 'h1'), ('h2', 'h2'), ('h3', 'h3'), ('h4', 'h4'), ('h5', 'h5')])
+    heading_size = blocks.CharBlock(required=False, help_text="any CSS unit supported px, %, rem, vh enz")
+    google_font = blocks.CharBlock(required=False, help_text="Choose a font from Google Font")
+
+    class Meta:
+        icon = 'fa-clock'
+        template = 'wagtail_block_collection/special/countdown_block.html'
+        label = "Countdown"
+        group = "Special"
+
+
 content_blocks = [
     ("TextBlock", TextBlock()),
     ("TextAndImageBlock", TextAndImageBlock()),
@@ -247,6 +265,7 @@ content_blocks = [
     ("TypeWriter", TypeWriter()),
     ("ImageSlider", ImageSlider()),
     ("AlertBlock", AlertBlock()),
+    ("CountdownBlock", CountdownBlock()),
 ]
 #################
 # Layout blocks #

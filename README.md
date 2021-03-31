@@ -46,14 +46,16 @@ They van be used without the sections
 - IMG slider
 - Alert
 - Bootstrap accordion
+- Bootstrap alert
 
 Planed
 - Vimeo video
 - More sliders
-- Bootstrap alert
 - Bootstrap buttongroup
 - Icon list
 - Price table
+- Countdown
+- Counter
 
 ## Quickstart
 This is the short version of what is in the [docs](https://wagtail-block-collection.sliceofbits.com/)  
