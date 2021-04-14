@@ -267,6 +267,8 @@ content_blocks = [
     ("AlertBlock", AlertBlock()),
     ("CountdownBlock", CountdownBlock()),
 ]
+
+
 #################
 # Layout blocks #
 #################
