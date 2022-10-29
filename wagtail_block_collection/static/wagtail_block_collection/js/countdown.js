@@ -24,20 +24,19 @@ if(CountDownElement) {
         countdownString = '';
 
         if (CountDownElement.getAttribute('data-days-string')) {
-            console.log("test");
-            countdownString = days + CountDownElement.getAttribute('data-days-string');
+            countdownString = days + ' ' + CountDownElement.getAttribute('data-days-string');
         }
 
         if (CountDownElement.getAttribute('data-hours-string')) {
-            countdownString = countdownString + hours + CountDownElement.getAttribute('data-hours-string');
+            countdownString = countdownString + ' ' + hours + ' ' + CountDownElement.getAttribute('data-hours-string');
         }
 
         if (CountDownElement.getAttribute('data-minutes-string')) {
-            countdownString = countdownString + minutes + CountDownElement.getAttribute('data-minutes-string');
+            countdownString = countdownString + ' ' + minutes + ' ' + CountDownElement.getAttribute('data-minutes-string');
         }
 
         if (CountDownElement.getAttribute('data-seconds-string')) {
-            countdownString = countdownString + seconds + CountDownElement.getAttribute('data-seconds-string');
+            countdownString = countdownString + ' ' + seconds + ' ' + CountDownElement.getAttribute('data-seconds-string');
         }
 
         CountDownElement.innerHTML = countdownString;
